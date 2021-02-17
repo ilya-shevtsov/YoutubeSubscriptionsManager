@@ -1,0 +1,22 @@
+#sortByMostPopular {
+    position: absolute;
+    top: 8%;
+    left: 70%;
+}
+
+#sortByLeastPopular {
+    position: absolute;
+    top: 8%;
+    left: 80%;
+}
+#sortByMostHardWorking {
+    position: absolute;
+    top: 12%;
+    left: 70%;
+}
+
+#sortByLeastHardWorking {
+    position: absolute;
+    top: 12%;
+    left: 82%;
+}

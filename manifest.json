@@ -1,23 +1,28 @@
 {
   "name": "Youtube Subscriptions Manager",
-  "version": "1.0",
+  "description": "Extension for managing Youtube subscriptions",
+  "version": "0.1",
   "manifest_version": 2,
   "content_scripts": [
     {
       "matches": [
         "https://www.youtube.com/feed/channels"
       ],
-      "js": [
-        "content.js"
-      ]
+      "js": ["content.js"]
     }
   ],
   "background": {
-    "scripts": [
-      "background.js"
-    ]
+    "scripts": ["background.js"]
   },
+  "options_page": "options.html",
   "browser_action": {
-    "default_icon": "ct.png"
-  }
+    "default_icon": "ct.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "https://www.youtube.com/feed/channels",
+    "https://www.google.com/",
+    "storage"
+  ]
 }

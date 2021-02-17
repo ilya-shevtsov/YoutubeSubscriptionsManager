@@ -1,11 +1,25 @@
-console.log("background is running")
+// chrome.tabs.onActivated.addListener(tab => {
+//     chrome.tabs.get(tab.tabId, current_tab_info => {
+//         if (/^https:\/\/www\.google/.test(current_tab_info.url)) {
+//             chrome.tabs.insertCSS(null,{file: "./mystyle.css"})
+//             chrome.tabs.executeScript(
+//                 null,
+//                 {file: "./foreground.js"},
+//                 () => console.log("I injected!")
+//             )
+//         }
+//     })
+// })
+chrome.tabs.onActivated.addListener(tab => {
+    chrome.tabs.get(tab.tabId, current_tab_info => {
+        if (/^(https:\/\/www\.youtube\.com\/feed\/channels)*$/.test(current_tab_info.url)) {
+            chrome.tabs.insertCSS(null,{file: "./mystyle.css"})
+            chrome.tabs.executeScript(
+                null,
+                {file: "./foreground.js"},
+                () => console.log("I injected!")
+            )
+        }
+    })
+})
 
-// chrome.browserAction.onClicked.addListener(buttonClicked)
-
-// function buttonClicked(tab){
-// 	console.log(tab)
-// 	let msg = {
-// 		txt: "hello"
-// 	}
-// 	chrome.tabs.sendMessage(tab.id, msg);
-// }
